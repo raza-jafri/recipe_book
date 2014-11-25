@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Recipe Box Results"</title>
+  <style>
+    .thumbnail img {
+      width: 100%;
+    }
+    ol {
+      font-size: 40px;
+      color: rgb(0, 0, 255);
+    }
+  </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="jumbotron">
+        <h1><em>Suggested Recipes</em></h1>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Recipe Name</th>
+            <th>Time to Cook</th>
+            <th>Ingredients</th>
+            <th># of Matches</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @matches.each do |match| %>
+            <tr>
+              <td><%= @recipeName %></td>
+              <td><%= @time_to_cook / 60 %> Minutes</td>
+              <td><%= @total_ingredients %></td>
+              <td><%= @matches.length %></td>
+              <td><img src="<%= @small_picture %>"></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="row">
+        <h2><em>Most Used Recipes</em></h2>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+          <img src="pictures/burger_small.jpg" alt="Small burgers">
+            <div class="caption">
+            <h3>Small burgers</h3>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Go to Recipe!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+          <img src="pictures/soft_taco.jpg" alt="Soft taco">
+            <div class="caption">
+            <h3>Soft taco</h3>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Go to Recipe!</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+          <img src="pictures/chicken.jpg" alt="Chicken">
+            <div class="caption">
+            <h3>Chicken</h3>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+              <p><a href="#" class="btn btn-primary" role="button">Go to Recipe!</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

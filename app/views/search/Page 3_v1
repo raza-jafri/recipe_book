@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Recipe Box Single Page"</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <style>
+    .padding_1 {
+      padding-top: 25px;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Home</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">User</a></li>
+            <li><a href="#">#Trending</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search Recipe Box">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <li><a href="#">Notifications</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <img src="pictures/ThaiShrimpSoup.jpg" alt="Thai Soup">
+        </div>
+        <div class="col-md-8">
+          <h2><em>Thai Shrimp Soup with Coconut, Lemongrass, and Red Curry</em></h2>
+            <div class="col-md-3 col-md-offset-2">
+              <div class="padding_1">
+                <h4>Prep Time: 25 Minutes</h4>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="padding_1">
+                <h4>Cook Time: 25 Minutes</h4>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="padding_1">
+                <h4>Total Time: 50 Minutes</h4>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="padding_1">
+          <div class="jumbotron">
+            <h2><em>Instructions</em></h2>
+            <table class="table">
+              <h3><ol>
+              <li>Step 1</li>
+                <h5><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut commodo tortor id mattis suscipit. Sed quis est sit amet quam pharetra eleifend. Nunc laoreet, diam et vehicula cursus, enim urna condimentum mi, a commodo lacus enim nec erat. Curabitur vehicula leo vel diam aliquet, ultricies malesuada magna fermentum.</p></h5>
+              <li>Step 2</li>
+                <h5><p> Suspendisse dignissim condimentum mi non ornare. Aliquam congue lacus et eros luctus feugiat. Cras sed semper arcu, non pretium diam. Vestibulum mattis leo et sollicitudin hendrerit. Cras eu risus et sem varius gravida ut sit amet lorem. Aenean posuere vehicula condimentum. In imperdiet nisl sed vulputate ullamcorper. </p></h5>
+              <li>Step 3</li>
+                <h5><p>Donec fringilla, leo id rutrum maximus, ligula turpis sodales nisi, at cursus nibh felis at ligula. Curabitur accumsan eu neque at venenatis. Pellentesque egestas arcu nec orci iaculis iaculis.</p></h5>
+              <li>Step 4</li>
+                <h5><p>Suspendisse convallis tempor dolor sit amet eleifend. Suspendisse auctor urna neque, ut placerat diam aliquet tincidunt. Vestibulum blandit bibendum ligula, at posuere magna fringilla a. Vestibulum volutpat nibh in cursus congue.</p></h5>
+              <li>Step 5</li>
+                <h5><p>Pellentesque convallis at leo nec tristique. Integer sed commodo dolor. Praesent lobortis turpis non nisl ullamcorper, at venenatis neque ultrices. Aliquam in congue quam. Nunc quis efficitur sem. Proin auctor ipsum interdum elementum pharetra.</p></h5>
+              <li>Step 6</li>
+                <h5><p>Fusce imperdiet lacinia porttitor. Nulla sit amet est id erat faucibus sagittis. Praesent viverra, neque ut eleifend consectetur, nisl erat tincidunt velit, at imperdiet tortor erat non nulla. Integer porttitor ligula leo, ut pellentesque augue venenatis eu.</p></h5>
+              </ol></h3>
+            </table>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>

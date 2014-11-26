@@ -1,0 +1,159 @@
+<!-- Validation failure messages -->
+
+<% if @recipe.errors.any? %>
+  <% @recipe.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<!-- Simple full-width example -->
+
+<div class="page-header">
+  <h1>Edit Recipe #<%= @recipe.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_recipe/<%= @recipe.id %>" class="form-horizontal">
+      <!-- Label and input for cuisine_id -->
+      <div class="form-group">
+        <label for="cuisine_id" class="col-sm-2 control-label">
+          Cuisine
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="cuisine_id" name="cuisine_id" placeholder="Cuisine" class="form-control" value="<%= @recipe.cuisine_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for recipe_name -->
+      <div class="form-group">
+        <label for="recipe_name" class="col-sm-2 control-label">
+          Recipe name
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="recipe_name" name="recipe_name" placeholder="Recipe name" class="form-control" value="<%= @recipe.recipe_name %>">
+        </div>
+      </div>
+
+      <!-- Label and input for image_url -->
+      <div class="form-group">
+        <label for="image_url" class="col-sm-2 control-label">
+          Image url
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @recipe.image_url %>">
+        </div>
+      </div>
+
+      <!-- Label and input for time_to_prepare -->
+      <div class="form-group">
+        <label for="time_to_prepare" class="col-sm-2 control-label">
+          Time to prepare
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="time_to_prepare" name="time_to_prepare" placeholder="Time to prepare" class="form-control" value="<%= @recipe.time_to_prepare %>">
+        </div>
+      </div>
+
+      <!-- Label and input for time_to_cook -->
+      <div class="form-group">
+        <label for="time_to_cook" class="col-sm-2 control-label">
+          Time to cook
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="time_to_cook" name="time_to_cook" placeholder="Time to cook" class="form-control" value="<%= @recipe.time_to_cook %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Update Recipe" class="btn btn-warning">
+          or
+          <a href="/recipes/<%= @recipe.id %>">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- End simple full-width example-->
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Edit Recipe #<%= @recipe.id %></h3>
+      </div>
+      <div class="panel-body">
+        <form action="/update_recipe/<%= @recipe.id %>" class="form-horizontal">
+          <!-- Label and input for cuisine_id -->
+          <div class="form-group">
+            <label for="cuisine_id" class="col-sm-2 control-label">
+              Cuisine
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="cuisine_id" name="cuisine_id" placeholder="Cuisine" class="form-control" value="<%= @recipe.cuisine_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for recipe_name -->
+          <div class="form-group">
+            <label for="recipe_name" class="col-sm-2 control-label">
+              Recipe name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="recipe_name" name="recipe_name" placeholder="Recipe name" class="form-control" value="<%= @recipe.recipe_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for image_url -->
+          <div class="form-group">
+            <label for="image_url" class="col-sm-2 control-label">
+              Image url
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="image_url" name="image_url" placeholder="Image url" class="form-control" value="<%= @recipe.image_url %>">
+            </div>
+          </div>
+
+          <!-- Label and input for time_to_prepare -->
+          <div class="form-group">
+            <label for="time_to_prepare" class="col-sm-2 control-label">
+              Time to prepare
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="time_to_prepare" name="time_to_prepare" placeholder="Time to prepare" class="form-control" value="<%= @recipe.time_to_prepare %>">
+            </div>
+          </div>
+
+          <!-- Label and input for time_to_cook -->
+          <div class="form-group">
+            <label for="time_to_cook" class="col-sm-2 control-label">
+              Time to cook
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="time_to_cook" name="time_to_cook" placeholder="Time to cook" class="form-control" value="<%= @recipe.time_to_cook %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Update Recipe" class="btn btn-warning">
+              or
+              <a href="/recipes/<%= @recipe.id %>">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- End responsive panel example -->

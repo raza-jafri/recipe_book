@@ -1,0 +1,137 @@
+<!-- Validation failure messages -->
+
+<% if @ingredient.errors.any? %>
+  <% @ingredient.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Simple full-width example-->
+
+<div class="page-header">
+  <h1>Add Ingredient</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_ingredient" class="form-horizontal">
+      <!-- Label and input for recipe_id -->
+      <div class="form-group">
+        <label for="recipe_id" class="col-sm-2 control-label">
+          Recipe
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="recipe_id" name="recipe_id" placeholder="Recipe" class="form-control" value="<%= @ingredient.recipe_id %>">
+        </div>
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">
+          Name
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @ingredient.name %>">
+        </div>
+      </div>
+
+      <!-- Label and input for amount -->
+      <div class="form-group">
+        <label for="amount" class="col-sm-2 control-label">
+          Amount
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @ingredient.amount %>">
+        </div>
+      </div>
+
+      <!-- Label and input for amount_units -->
+      <div class="form-group">
+        <label for="amount_units" class="col-sm-2 control-label">
+          Amount units
+        </label>
+        <div class="col-sm-10">
+          <input type="text" id="amount_units" name="amount_units" placeholder="Amount units" class="form-control" value="<%= @ingredient.amount_units %>">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Create Ingredient" class="btn btn-success">
+          or
+          <a href="/ingredients">Cancel</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- End simple full-width example-->
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Ingredient</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_ingredient" class="form-horizontal">
+          <!-- Label and input for recipe_id -->
+          <div class="form-group">
+            <label for="recipe_id" class="col-sm-2 control-label">
+              Recipe
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="recipe_id" name="recipe_id" placeholder="Recipe" class="form-control" value="<%= @ingredient.recipe_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for name -->
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">
+              Name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @ingredient.name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for amount -->
+          <div class="form-group">
+            <label for="amount" class="col-sm-2 control-label">
+              Amount
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="amount" name="amount" placeholder="Amount" class="form-control" value="<%= @ingredient.amount %>">
+            </div>
+          </div>
+
+          <!-- Label and input for amount_units -->
+          <div class="form-group">
+            <label for="amount_units" class="col-sm-2 control-label">
+              Amount units
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="amount_units" name="amount_units" placeholder="Amount units" class="form-control" value="<%= @ingredient.amount_units %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Create Ingredient" class="btn btn-success">
+              or
+              <a href="/ingredients">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

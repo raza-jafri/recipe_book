@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
-    Recipes
-    <a href="/recipes/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
+    Cuisine types
+    <a href="/cuisine_types/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
   </h1>
 </div>
 
@@ -12,11 +12,7 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Cuisine</th>
-          <th>Recipe name</th>
-          <th>Image</th>
-          <th>Time to prepare</th>
-          <th>Time to cook</th>
+          <th>Name</th>
           <th></th>
           <th></th>
           <th></th>
@@ -24,25 +20,21 @@
       </thead>
 
       <tbody>
-        <% @recipes.each do |recipe| %>
+        <% @cuisine_types.each do |cuisine_type| %>
           <tr>
-            <td><%= recipe.cuisine_id %></td>
-            <td><%= recipe.recipe_name %></td>
-            <td><%= recipe.image_url %></td>
-            <td><%= recipe.time_to_prepare %></td>
-            <td><%= recipe.time_to_cook %></td>
+            <td><%= cuisine_type.name %></td>
             <td>
-              <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+              <a href="/cuisine_types/<%= cuisine_type.id %>" class="btn btn-primary">
                 <i class="fa fa-search-plus"></i>
               </a>
             </td>
             <td>
-              <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+              <a href="/cuisine_types/<%= cuisine_type.id %>/edit" class="btn btn-warning">
                 <i class="fa fa-edit"></i>
               </a>
             </td>
             <td>
-              <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger">
+              <a href="/delete_cuisine_type/<%= cuisine_type.id %>" class="btn btn-danger">
                 <i class="fa fa-trash-o"></i>
               </a>
             </td>
@@ -59,47 +51,35 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <input type="text" id="quicksearch" placeholder="Search Recipes (start typing)" class="form-control">
+    <input type="text" id="quicksearch" placeholder="Search Cuisine types (start typing)" class="form-control">
   </div>
 </div>
 
 <hr>
 
 <div class="row isotope-container">
-<% @recipes.each do |recipe| %>
+<% @cuisine_types.each do |cuisine_type| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe #<%= recipe.id %></h3>
+        <h3 class="panel-title">Cuisine Type #<%= cuisine_type.id %></h3>
       </div>
       <div class="panel-body">
         <dl>
-          <dt>Cuisine</dt>
-          <dd><%= recipe.cuisine_id %></dd>
-
-          <dt>Recipe name</dt>
-          <dd><%= recipe.recipe_name %></dd>
-
-          <dt>Image url</dt>
-          <dd><%= recipe.image_url %></dd>
-
-          <dt>Time to prepare</dt>
-          <dd><%= recipe.time_to_prepare %></dd>
-
-          <dt>Time to cook</dt>
-          <dd><%= recipe.time_to_cook %></dd>
+          <dt>Name</dt>
+          <dd><%= cuisine_type.name %></dd>
 
         </dl>
         <div class="btn-group btn-group-justified">
-          <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+          <a href="/cuisine_types/<%= cuisine_type.id %>" class="btn btn-primary">
             <i class="fa fa-search-plus"></i>
           </a>
 
-          <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+          <a href="/cuisine_types/<%= cuisine_type.id %>/edit" class="btn btn-warning">
             <i class="fa fa-edit"></i>
           </a>
 
-          <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger">
+          <a href="/delete_cuisine_type/<%= cuisine_type.id %>" class="btn btn-danger">
             <i class="fa fa-trash-o"></i>
           </a>
         </div>

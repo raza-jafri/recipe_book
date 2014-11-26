@@ -1,0 +1,90 @@
+<!-- Simple full-width example-->
+
+<div class="page-header">
+  <h1>Ingredient #<%= @ingredient.id %></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Recipe</dt>
+      <dd><%= @ingredient.recipe_id %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @ingredient.name %></dd>
+
+      <dt>Amount</dt>
+      <dd><%= @ingredient.amount %></dd>
+
+      <dt>Amount units</dt>
+      <dd><%= @ingredient.amount_units %></dd>
+
+      <dt></dt>
+      <dd>
+        <div class="btn-group">
+          <a href="/ingredients" class="btn btn-primary">
+            <i class="fa fa-chevron-left"></i>
+          </a>
+
+          <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+
+          <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </div>
+      </dd>
+    </dl>
+
+  </div>
+</div>
+
+<!-- End simple full-width example-->
+
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Ingredient #<%= @ingredient.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Recipe</dt>
+              <dd><%= @ingredient.recipe_id %></dd>
+
+              <dt>Name</dt>
+              <dd><%= @ingredient.name %></dd>
+
+              <dt>Amount</dt>
+              <dd><%= @ingredient.amount %></dd>
+
+              <dt>Amount units</dt>
+              <dd><%= @ingredient.amount_units %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/ingredients" class="btn btn-primary">
+                <i class="fa fa-chevron-left"></i>
+              </a>
+
+              <a href="/ingredients/<%= @ingredient.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+              <a href="/delete_ingredient/<%= @ingredient.id %>" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

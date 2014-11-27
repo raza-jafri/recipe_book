@@ -12,8 +12,10 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Recipe Name</th>
+          <th>Cuisine</th>
+          <th>Recipe name</th>
           <th>Image</th>
+          <th>Time to prepare</th>
           <th>Time to cook</th>
           <th></th>
           <th></th>
@@ -24,9 +26,26 @@
       <tbody>
         <% @matches.each do |match| %>
           <tr>
+            <!-- <td><%= recipe.cuisine_id %></td> -->
             <td><%= @recipe %></td>
-            <td><img src="<%= @small_picture %>"></td>
-            <td><%= @time_to_cook /60 %> Minutes</td>
+            <td><%= @small_picture %></td>
+            <td><%= recipe.time_to_prepare %></td>
+            <td><%= @time_to_cook %></td>
+            <td>
+              <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+                <i class="fa fa-search-plus"></i>
+              </a>
+            </td>
+            <td>
+              <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+            </td>
+            <td>
+              <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger">
+                <i class="fa fa-trash-o"></i>
+              </a>
+            </td>
           </tr>
         <% end %>
       </tbody>
@@ -47,22 +66,43 @@
 <hr>
 
 <div class="row isotope-container">
-<% @matches.each do |match| %>
+<% @recipes.each do |recipe| %>
   <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title">Recipe: <%= @recipe %></h3>
+        <h3 class="panel-title">Recipe #<%= recipe.id %></h3>
       </div>
       <div class="panel-body">
         <dl>
+          <dt>Cuisine</dt>
+          <dd><%= recipe.cuisine_id %></dd>
 
-          <dt></dt>
-          <dd><img src="<%= @small_picture %>"></dd>
+          <dt>Recipe name</dt>
+          <dd><%= recipe.recipe_name %></dd>
+
+          <dt>Image url</dt>
+          <dd><%= recipe.image_url %></dd>
+
+          <dt>Time to prepare</dt>
+          <dd><%= recipe.time_to_prepare %></dd>
 
           <dt>Time to cook</dt>
-          <dd><%= @time_to_cook / 60 %> Minutes</dd>
+          <dd><%= recipe.time_to_cook %></dd>
 
         </dl>
+        <div class="btn-group btn-group-justified">
+          <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+            <i class="fa fa-search-plus"></i>
+          </a>
+
+          <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+            <i class="fa fa-edit"></i>
+          </a>
+
+          <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger">
+            <i class="fa fa-trash-o"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -110,3 +150,5 @@
 </script>
 
 <!-- End responsive, Isotope-based layout example -->
+
+

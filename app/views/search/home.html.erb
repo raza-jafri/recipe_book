@@ -58,11 +58,29 @@
           </a>
         </div>
       </div>
+
       <div class="Padding_1">
+      <form action="/recipes/<%= @ingredient_1 %>/<%= @ingredient_2 %>" class ="form-horizontal">
         <div class ="row">
-          <input class="form-control input-lg" id="Input" type="text" placeholder="Example: Chicken, apple, etc.">
+          <input class="form-control input-lg" id="Input" type="text" placeholder="Enter two ingredients - e.g., chicken, apple, etc.">
         </div>
       </div>
+
+      <!--Dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-primary btn-lg dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+          Cuisine
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Indian</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Chinese</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Italian</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Thai</a></li>
+        </ul>
+      </div>
+
+
       <div class="Padding_1">
         <div class="row">
           <div class="col-md-4">

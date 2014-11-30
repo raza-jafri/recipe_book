@@ -1,0 +1,159 @@
+<div class="page-header">
+  <h1>
+    Recipes
+    <a href="/recipes/new" class="btn btn-lg btn-success"><i class="fa fa-plus"></i></a>
+  </h1>
+</div>
+
+<!-- @Pinterest Panel -->
+
+<div id="wrapper">
+  <% @matches.each do |match| %>
+  <div id="columns">
+    <div class="pin">
+      <img src="<%= match["imageUrlsBySize"]["90"] %>">
+        <div>
+        <h3 class="panel-title">Recipe: <%= match["recipeName"] %></h3>
+        </div>
+          <div class="panel-body">
+            <dl>
+
+              <dt>Ingredients</dt>
+              <dd><% match["ingredients"].each do |ingredient| %>
+                <%= ingredient %>
+                <% end %>
+              </dd>
+
+              <dt>Time to cook</dt>
+              <dd><%= if match["totalTimeInSeconds"].to_i > 0
+                     match["totalTimeInSeconds"] / 60
+                  else
+                      "Undefined"
+                  end
+                  %> Minutes</dd>
+
+              <dt>Ratings</dt>
+              <dd><%= match["rating"] %> Stars</dd>
+
+            </dl>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<script>
+
+  tiles = $('.tiles .t')
+  container = $('.tiles').width()
+  width     = $('.tiles .t:first').width()
+  columns_height = {}
+  columns   = Math.floor container / width
+  space     = container % width
+  space     = space / (columns-1)
+
+  for tile,i in tiles
+    column_index = i % columns
+    columns_height[column_index] ?= 0
+    sp = switch column_index
+      when 0 then 0
+      when columns then 0
+      else
+        space * column_index
+    $(tile).css
+      top: columns_height[column_index]
+      left: (column_index * width)+sp
+    columns_height[column_index] += $(tile).height()+space
+
+  max_height = 0
+  for k,v of columns_height
+    if v > max_height
+      max_height = v
+  $('.tiles').height max_height-space
+
+</script>
+
+<!-- Responsive, Isotope-based layout example -->
+
+<hr>
+
+<div class="row isotope-container">
+<% @matches.each do |match| %>
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Recipe: <%= match["recipeName"] %></h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+
+          <dt>Ingredients</dt>
+          <dd><% match["ingredients"].each do |ingredient| %>
+            <%= ingredient %>
+            <% end %>
+          </dd>
+
+          <dt>Time to cook</dt>
+          <dd><%= if match["totalTimeInSeconds"].to_i > 0
+                     match["totalTimeInSeconds"] / 60
+                  else
+                      "Undefined"
+                  end
+            %> Minutes</dd>
+
+          <dt>Ratings</dt>
+          <dd><%= match["rating"] %> Stars</dd>
+
+          <dd><img src="<%= match["smallImageUrls"][0] %>"></dd>
+
+        </dl>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<!-- JavaScript for Isotope layout and quicksearch -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+<script>
+  $(function() {
+    // quick search regex
+    var qsRegex;
+
+    // init Isotope
+    var $container = $('.isotope-container').isotope({
+      itemSelector: '.isotope-item',
+      layoutMode: 'masonry',
+      filter: function() {
+        return qsRegex ? $(this).text().match( qsRegex ) : true;
+      }
+    });
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+    }, 200 ) );
+
+  });
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
+</script>
+
+<!-- End responsive, Isotope-based layout example -->
+
+
+
+

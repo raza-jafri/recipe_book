@@ -58,28 +58,24 @@ class RecipesController < ApplicationController
   end
 
   def search
-    @ingredient_1 = params[:a]
-    @ingredient_2 = params[:b]
+    @ingredient = params[:ingredients]
 
-    ing_1 = URI.encode(@ingredient_1)
-    ing_2 = URI.encode(@ingredient_2)
+    ing = URI.encode(@ingredient)
 
-    url = "http://api.yummly.com/v1/api/recipes?_app_id=03dad7a0&_app_key=0e386e167b90fc69b5956a4bd1ab0a6d&q=#{ing_1}+#{ing_2}"
+    url = "http://api.yummly.com/v1/api/recipes?_app_id=03dad7a0&_app_key=0e386e167b90fc69b5956a4bd1ab0a6d&q=#{ing}"
     raw_data = open(url).read
     parsed_data = JSON.parse(raw_data)
     @matches = parsed_data["matches"]
     @number_of_matches = @matches.length
 
-    @first = @matches[0]
-    @recipe = @first["recipeName"]
-    @time_to_cook = @first["totalTimeInSeconds"]
-    @big_picture = @first["imageUrlsBySize"][0]
-    @small_picture = @first["smallImageUrls"][0]
-    @rating = @first["rating"]
-    @total_ingredients = @first["ingredients"]
-    @attributes = @first["attributes"]
+    # @time_to_cook = @first["totalTimeInSeconds"]
+    # @big_picture = @first["imageUrlsBySize"]["90"]
+    # @small_picture = @first["smallImageUrls"][0]
+    # @rating = @first["rating"]
+    # @total_ingredients = @first["ingredients"][0..30]
+    # @attributes = @first["attributes"]
 
-    render 'index'
+    render 'search'
 
   end
 

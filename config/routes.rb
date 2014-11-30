@@ -88,6 +88,6 @@ Rails.application.routes.draw do
 
   # Routes for recipes
   #get("/recipes", { :controller => "recipes", :action => "home" })
-  get("/recipes/:a/:b", { :controller => "recipes", :action => "search" })
+  get("/recipes/:a/search", { :controller => "recipes", :action => "search" })
 
 end

@@ -24,10 +24,25 @@
       <tbody>
         <% @recipes.each do |recipe| %>
           <tr>
-            <td><%= @recipe.recipe_name %></td>
-            <td><%= @recipe.cuisine_id %></td>
-            <td><%= @recipe.time_to_prepare %></td>
-            <td><%= @recipe.time_to_cook %></td>
+            <td><%= recipe.recipe_name %></td>
+            <td><%= recipe.cuisine_id %></td>
+            <td><%= recipe.time_to_prepare %></td>
+            <td><%= recipe.time_to_cook %></td>
+            <td><img src="<%= recipe.image_url %>" width="90px"></td>
+            <td>
+              <div class="btn-group btn-group-lg">
+                <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+                  <i class="fa fa-search-plus"></i>
+                </a></div>
+              <div class="btn-group btn-group-lg">
+                <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+                  <i class="fa fa-edit"></i>
+                </a></div>
+              <div class="btn-group btn-group-lg">
+                <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger">
+                  <i class="fa fa-trash-o"></i>
+                </a></div>
+            </td>
           </tr>
         <% end %>
       </tbody>
@@ -36,3 +51,4 @@
 </div>
 
 <!-- End simple table layout example -->
+

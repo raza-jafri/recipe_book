@@ -5,7 +5,7 @@
   <style>
     .Padding_1 {
       padding-top: 50px;
-      padding-bottom: 30px;
+      padding-bottom: 100px;
     }
     .Padding_2 {
       padding-top: 15px;
@@ -14,17 +14,21 @@
     .Padding_3 {
       padding-bottom: 250px;
     }
+
+    body {
+        font-family: 'Lobster', cursive;
+      }
   </style>
   </head>
   <body>
     <div class="container">
-      <div class="Padding_1">
+      <div class="Padding_2">
         <div class="row">
           <h1><p class="text-center"><em>What's in your fridge today?</em></p></h1>
         </div>
       </div>
       <div class="row">
-        <div id="carousel-example-generic" class="carousel slide" style="width: 600px; margin: 0 auto" data-ride="carousel">
+        <div id="carousel-example-generic" class="carousel slide" style="width: 400px; margin: 0 auto" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -34,17 +38,17 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
             <div class="item active">
-              <img src="/assets/burger_small.jpg" alt="Burger" width="600px">
+              <img src="/assets/burger_small.jpg" alt="Burger" width="400px">
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
-              <img src="/assets/soft_taco.jpg" alt="Soft Taco" width="600px">
+              <img src="/assets/soft_taco.jpg" alt="Soft Taco" width="400px">
               <div class="carousel-caption">
               </div>
             </div>
             <div class="item">
-              <img src="/assets/chicken.jpg" alt="Chicken" width="600px">
+              <img src="/assets/chicken.jpg" alt="Chicken" width="400px">
               <div class="carousel-caption">
               </div>
             </div>
@@ -62,30 +66,10 @@
       <div class="Padding_1">
       <form action="/recipes/a/search" class ="form-horizontal">
         <div class ="row">
-          <input class="form-control input-lg" name="ingredients" id="Input" type="text" placeholder="Enter ingredients: e.g., chicken apple">
+          <input class="form-control input-lg" name="ingredients" id="Input" type="text" placeholder="Enter 2 ingredients: e.g., chicken apple">
         </div>
       </div>
 
-      <div class="Padding_1">
-        <div class="row">
-          <div class="col-md-4">
-            <a class="btn btn-primary btn-lg btn-block" href="#">Indian</a>
-          </div>
-          <div class="col-md-4">
-            <a class="btn btn-primary btn-lg btn-block" href="#">Italian</a>
-          </div>
-          <div class="col-md-4">
-            <a class="btn btn-primary btn-lg btn-block" href="#">Chinese</a>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div class="Padding_3">
-        <div class="row">
-          <div class="col-md-4 col-md-offset-4">
-          <a class="btn btn-success btn-lg btn-block" href="#">Random</a>
-          </div>
-        </div>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

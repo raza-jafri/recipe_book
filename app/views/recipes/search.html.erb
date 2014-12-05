@@ -25,7 +25,9 @@
 
           <div class="panel-body">
             <dl>
-              <img src="<%= match["imageUrlsBySize"]["90"] %>">
+              <% if match["imageUrlsBySize"].present? %>
+                <img src="<%= match["imageUrlsBySize"]["90"] %>">
+              <% end %>
               <dt>Ingredients</dt>
               <dd><% match["ingredients"].each do |ingredient| %>
                 <%= ingredient %>
@@ -33,15 +35,18 @@
               </dd>
 
               <dt>Time to cook</dt>
-              <dd><%= if match["totalTimeInSeconds"].to_i > 0
-                     match["totalTimeInSeconds"] / 60
-                  else
-                      "Undefined"
-                  end
-                  %> Minutes</dd>
+              <dd><% if match["totalTimeInSeconds"].to_i > 0 %>
+                     <%= match["totalTimeInSeconds"] / 60 %>
+                  <% else %>
+                       Undefined
+                  <% end %>
+                  Minutes</dd>
 
               <dt>Ratings</dt>
               <dd><%= match["rating"] %> Stars</dd>
+
+              <dt>Directions</dt>
+              <dd><a href="http://www.yummly.com/recipe/<%= match["id"] %>">Yummly Guide</a></dd>
 
             </dl>
           </div>

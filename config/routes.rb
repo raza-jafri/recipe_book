@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
   # Routes for the Cuisine_type resource:
   # CREATE
+  root 'search#home'
+
   get('/cuisine_types/new', { :controller => 'cuisine_types', :action => 'new' })
   get('/create_cuisine_type', { :controller => 'cuisine_types', :action => 'create' })
 
@@ -84,7 +87,8 @@ Rails.application.routes.draw do
   get('/delete_recipe/:id', { :controller => 'recipes', :action => 'destroy' })
   #------------------------------
 
-  get("/", { :controller => "search", :action => "home"})
+
+  #get("/", { :controller => "search", :action => "home"})
 
   # Routes for recipes
   #get("/recipes", { :controller => "recipes", :action => "home" })

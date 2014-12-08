@@ -25,7 +25,7 @@
           Cuisine
         </label>
         <div class="col-sm-10">
-          <input type="text" id="cuisine_id" name="cuisine_id" placeholder="Cuisine" class="form-control" value="<%= @recipe.cuisine_id %>">
+           <%= select_tag(:cuisine_id, options_from_collection_for_select(CuisineType.all, :id, :name, @recipe.cuisine_id), :class => "form-control") %>
         </div>
       </div>
 

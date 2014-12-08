@@ -25,7 +25,7 @@
         <% @recipes.each do |recipe| %>
           <tr>
             <td><%= recipe.recipe_name %></td>
-            <td><%= recipe.cuisine_id %></td>
+            <td><%= recipe.cuisine_id.name %></td>
             <td><%= recipe.time_to_prepare %></td>
             <td><%= recipe.time_to_cook %></td>
             <td><img src="<%= recipe.image_url %>" width="90px"></td>

@@ -16,7 +16,7 @@
           <th>Cusine Type</th>
           <th>Time to Prepare</th>
           <th>Time to Cook</th>
-          <th></th>
+          <!-- <th>User</th> -->
           <th></th>
         </tr>
       </thead>
@@ -26,8 +26,9 @@
           <tr>
             <td><%= recipe.recipe_name %></td>
             <td><%= recipe.cuisine.name %></td>
-            <td><%= recipe.time_to_prepare %></td>
-            <td><%= recipe.time_to_cook %></td>
+            <td><%= recipe.time_to_prepare %> Minutes</td>
+            <td><%= recipe.time_to_cook %> Minutes</td>
+           <!--  <td><%= recipe.user %></td> -->
             <td><img src="<%= recipe.image_url %>" height="90px" width="90px"></td>
             <td>
               <div class="btn-group btn-group-lg">

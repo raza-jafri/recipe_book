@@ -13,7 +13,7 @@
       <thead>
         <tr>
           <th>Username</th>
-          <th></th>
+          <th>Email</th>
           <th></th>
           <th></th>
         </tr>
@@ -23,6 +23,7 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= user.username %></td>
+            <td><%= user.email %></td>
             <td>
               <a href="/users/<%= user.id %>" class="btn btn-primary">
                 <i class="fa fa-search-plus"></i>
@@ -57,37 +58,7 @@
 
 <hr>
 
-<div class="row isotope-container">
-<% @users.each do |user| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">User #<%= user.id %></h3>
-      </div>
-      <div class="panel-body">
-        <dl>
-          <dt>Username</dt>
-          <dd><%= user.username %></dd>
 
-        </dl>
-        <div class="btn-group btn-group-justified">
-          <a href="/users/<%= user.id %>" class="btn btn-primary">
-            <i class="fa fa-search-plus"></i>
-          </a>
-
-          <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
-            <i class="fa fa-edit"></i>
-          </a>
-
-          <a href="/delete_user/<%= user.id %>" class="btn btn-danger">
-            <i class="fa fa-trash-o"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
-</div>
 
 <!-- JavaScript for Isotope layout and quicksearch -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>

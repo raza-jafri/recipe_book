@@ -3,7 +3,7 @@ require 'json'
 
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(:user_id => current_user.id)
   end
 
   def show
@@ -16,6 +16,7 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = Recipe.new
+    @recipe.user_id = params[:user_id]
     @recipe.cuisine_id = params[:cuisine_id]
     @recipe.recipe_name = params[:recipe_name]
     @recipe.image_url = params[:image_url]
@@ -68,19 +69,12 @@ class RecipesController < ApplicationController
     @matches = parsed_data["matches"]
     @number_of_matches = @matches.length
 
-    # @time_to_cook = @first["totalTimeInSeconds"]
-    # @big_picture = @first["imageUrlsBySize"]["90"]
-    # @small_picture = @first["smallImageUrls"][0]
-    # @rating = @first["rating"]
-    # @total_ingredients = @first["ingredients"][0..30]
-    # @attributes = @first["attributes"]
-
     render 'search'
 
   end
 
 
-
+before_action :authenticate_user!, :except => [:search]
 
 
 end

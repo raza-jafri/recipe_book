@@ -19,11 +19,15 @@
         padding-top: 5px;
         padding-bottom: 75px;
       }
+
+      .scheme {
+        background-color: #2C3539;
+      }
     </style>
 
   </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default scheme" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,7 +67,7 @@
             <li><a href="/users/sign_out" data-method="delete">Sign out</a></li>
           <% else %>
             <li><a href="/users/sign_up">Sign up</a></li>
-            <li><a href="/users/sign_in">Sign in</a></li>
+            <li><a href="/users/sign_in">Log in</a></li>
           <% end %>
           </ul>
         </div><!-- /.navbar-collapse -->

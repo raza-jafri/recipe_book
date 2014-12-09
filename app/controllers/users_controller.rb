@@ -45,4 +45,6 @@ class UsersController < ApplicationController
 
     redirect_to "/users", :notice => "User deleted."
   end
+before_action :authenticate_user!
+
 end

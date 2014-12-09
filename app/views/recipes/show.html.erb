@@ -18,7 +18,7 @@
           <div class="col-md-12">
             <dl class="dl-horizontal">
               <dt>Cuisine</dt>
-              <dd><%= @recipe.cuisine_id.name %></dd>
+              <dd><%= @recipe.cuisine.name %></dd>
 
               <dt>Recipe name</dt>
               <dd><%= @recipe.recipe_name %></dd>
@@ -31,7 +31,7 @@
 
               <div class="padding_1">
               <dt>The Goal</dt>
-              <dd><img src="<%= @recipe.image_url %>" width="90px"></dd>
+              <dd><img src="<%= @recipe.image_url %>" height="90px" width="90px"></dd>
               </div>
 
             </dl>

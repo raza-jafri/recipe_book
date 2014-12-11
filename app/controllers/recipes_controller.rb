@@ -3,7 +3,7 @@ require 'json'
 
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.where(:user_id => current_user.id)
+    @recipes = current_user.recipes
   end
 
   def show
